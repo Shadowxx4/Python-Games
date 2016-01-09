@@ -1,5 +1,3 @@
-# implementation of card game - Memory
-
 import simplegui
 import random
 
@@ -9,13 +7,14 @@ exposed = []
 covers = []
 # helper function to initialize globals
 def new_game():
-    global gamelist, exposed, state, fliped1, fliped2
+    global gamelist, Turns, exposed, state, fliped1, fliped2
     state = 0
     Turns = 0
     exposed = []
     gamelist = range(8)
     gamelist.extend(gamelist)
-    random.shuffle(gamelist)  
+    random.shuffle(gamelist)
+    label1.set_text('Turns = '+str(Turns))
     for n in range(16):exposed.append(0)
 # define event handlers
 def mouseclick(pos):
